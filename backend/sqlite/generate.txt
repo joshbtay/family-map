@@ -1,0 +1,46 @@
+CREATE TABLE "users" (
+  "username" varchar(255) not null unique primary key,
+  "password" varchar(255) not null,
+  "email" varchar(255) not null unique,
+  first_name varchar(255) not null,
+  last_name varchar(255) not null,
+  gender varchar(1) not null,
+  person_id varchar(255) not null unique,
+  CONSTRAINT ck_gender check (gender in ("m", "f"))
+);
+
+CREATE TABLE "persons"
+(
+	person_id varchar(255) not null unique primary key,
+	username varchar(255),
+	first_name varchar(255) not null,
+	last_name varchar(255) not null,
+	gender varchar(1) not null,
+	father_id varchar(255),
+	mother_id varchar(255),
+	spouse_id varchar(255),
+	foreign key (username) references users(username),
+	constraint ck_gender check (gender in ('m', 'f'))
+);
+
+CREATE TABLE "events"
+(
+	event_id varchar(255) not null unique primary key,
+	username varchar(255),
+	person_id varchar(255),
+	latitude float not null,
+	longitude float not null,
+	country varchar(255) not null,
+	city varchar(255) not null,
+	event_type varchar(255) not null,
+	year int not null,
+	foreign key (username) references users(username),
+	foreign key (person_id) references persons(person_id)
+);
+
+create table "authtokens"
+(
+	auth_token varchar(255) not null unique primary key,
+	username varchar(255),
+	foreign key (username) references users(username)
+);

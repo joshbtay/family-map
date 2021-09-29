@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragmentContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.PersonActivity">
+    <RelativeLayout
+
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:id="@+id/topText"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/firstNameText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="4dp"
+                android:paddingTop="4dp"
+                android:text="@string/first_name" />
+
+            <TextView
+                android:id="@+id/firstName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/firstNameText"
+                android:layout_centerHorizontal="true"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:text="first name"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+            <TextView
+                android:id="@+id/lastNameText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/firstName"
+                android:paddingLeft="4dp"
+                android:paddingTop="4dp"
+                android:text="@string/last_name" />
+
+            <TextView
+                android:id="@+id/lastName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lastNameText"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:text="last name"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+            <TextView
+                android:id="@+id/genderText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lastName"
+                android:paddingLeft="4dp"
+                android:paddingTop="4dp"
+                android:text="@string/gender" />
+
+            <TextView
+                android:id="@+id/gender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/genderText"
+                android:layout_centerHorizontal="true"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:text="gender"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+        </RelativeLayout>
+
+    <ExpandableListView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/personView"
+        android:indicatorLeft="?android:attr/expandableListPreferredChildIndicatorLeft"
+        android:dividerHeight="0.5dp"
+        android:divider="@android:color/darker_gray"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_below="@id/topText"
+        tools:context=".ui.PersonActivity">
+    </ExpandableListView>
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
